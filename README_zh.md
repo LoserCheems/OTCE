@@ -7,9 +7,9 @@ Read this in [English](README.md)
 ![quadratic_self_attention_with_positional_encoding](./assets/quadratic_self_attention_with_positional_encoding.png)
 ![cross_domain_moe](./assets/cross_domain_moe.png)
 
-> **OTCE: Hybrid SSM and Attention with Cross Domain Mixture of Experts to construct Observer-Thinker-Conceiver-Expresser**\
+<!-- > **OTCE: Hybrid SSM and Attention with Cross Domain Mixture of Experts to construct Observer-Thinker-Conceiver-Expresser**\
 > Jingze Shi*\
-> Paper: 
+> Paper:  -->
 
 
 ## 关于
@@ -30,3 +30,25 @@ OTCE 是一种融合了 SSM 和 Attention 算法, 具有交叉领域共享参数
 ## 使用
 
 与使用 Transformers 库中的分词器, 配置, 模型方法相同.
+
+## 示例
+
+```python
+from OTCE.tokenization_cheems_OTCE import CheemsOTCETokenizer
+from OTCE.configuration_cheems_OTCE import CheemsOTCEConfig
+from OTCE.modeling_cheems_OTCE import CheemsOTCEForCausalLM
+
+tokenizer = CheemsOTCETokenizer("cheems_tokenizer.model")
+config = CheemsOTCEConfig()
+model = CheemsOTCEForCausalLM(config)
+
+input_ids = tokenizer("I am Cheems!", return_tensors='pt').to(model.device)["input_ids"]
+
+outputs = model.generate(input_ids, max_new_tokens=32)
+
+print(tokenizer.batch_decode(outputs))
+```
+
+```shell
+['[gMASK]sop I am Cheems! Thank you Cheems!']
+```
