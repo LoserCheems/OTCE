@@ -286,7 +286,6 @@ def apply_BC_rotary_pos_emb(b, c, cos, sin, position_ids):
     Returns:
         `tuple(torch.Tensor)` comprising of the B and C tensors rotated using the Rotary Position Embedding.
     """
-    # cos 和 sin 的形状为 [batch_size, seq_len, dim]
     cos = cos[position_ids]
     sin = sin[position_ids]
     b_embed = (b * cos) + (rotate_half(b) * sin)
@@ -584,7 +583,7 @@ class CheemsAttention(nn.Module):
         query_length = query_states.size(1)
         key_length = key_states.size(1)
         logn = torch.arange(offset+1, offset+key_length+1, dtype=torch.float32, device=query_states.device)[-query_length:] # [query_length]
-        base = torch.tensor(256).to(query_states.device) # 训练数据的平均长度 Training data average length
+        base = torch.tensor(4096).to(query_states.device) # 训练数据的平均长度 Training data average length
         logn = torch.log(logn) / torch.log(base)
         logn[logn < 1.0] = 1.0
         logn = logn.to(query_states.dtype).view(1, query_length, 1, 1)
@@ -749,7 +748,7 @@ class CheemsFlashAttention2(CheemsAttention):
         query_length = query_states.size(1)
         key_length = key_states.size(1)
         logn = torch.arange(offset+1, offset+key_length+1, dtype=torch.float32, device=query_states.device)[-query_length:] # [query_length]
-        base = torch.tensor(256).to(query_states.device)
+        base = torch.tensor(4096).to(query_states.device)
         logn = torch.log(logn) / torch.log(base)
         logn[logn < 1.0] = 1.0
         logn = logn.to(query_states.dtype).view(1, query_length, 1, 1)
@@ -1011,7 +1010,7 @@ class CheemsSdpaAttention(CheemsAttention):
         query_length = query_states.size(1)
         key_length = key_states.size(1)
         logn = torch.arange(offset+1, offset+key_length+1, dtype=torch.float32, device=query_states.device)[-query_length:]
-        base = torch.tensor(256).to(query_states.device)
+        base = torch.tensor(4096).to(query_states.device)
         logn = torch.log(logn) / torch.log(base)
         logn[logn < 1.0] = 1.0
         logn = logn.to(query_states.dtype).view(1, query_length, 1, 1)
@@ -1209,7 +1208,7 @@ class CheemsMambaMixer(nn.Module):
         C_length = C.size(1)
         B_length = B.size(1)
         logn = torch.arange(offset+1, offset+B_length+1, dtype=torch.float32, device=hidden_states.device)[-C_length:]
-        base = torch.tensor(256).to(hidden_states.device)
+        base = torch.tensor(4096).to(hidden_states.device)
         logn = torch.log(logn) / torch.log(base)
         logn[logn < 1.0] = 1.0
         logn = logn.to(hidden_states.dtype).view(1, C_length, 1)
@@ -1341,7 +1340,7 @@ class CheemsMambaMixer(nn.Module):
         C_length = C.size(1)
         B_length = B.size(1)
         logn = torch.arange(offset+1, offset+B_length+1, dtype=torch.float32, device=hidden_states.device)[-C_length:]
-        base = torch.tensor(256).to(hidden_states.device)
+        base = torch.tensor(4096).to(hidden_states.device)
         logn = torch.log(logn) / torch.log(base)
         logn[logn < 1.0] = 1.0
         logn = logn.to(hidden_states.dtype).view(1, C_length, 1)
