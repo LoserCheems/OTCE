@@ -41,11 +41,11 @@ from OTCE.modeling_cheems_OTCE import CheemsOTCEForCausalLM
 # Initialize
 tokenizer = CheemsOTCETokenizer("cheems_tokenizer.model")
 config = CheemsOTCEConfig()
-model = CheemsOTCEForCausalLM(config)
+model = CheemsOTCEForCausalLM(config=config)
 
 # Or load from the path of the saved checkpoint
 config = CheemsOTCEConfig.from_pretrained("<path_to_saved_checkpoint>")
-model = CheemsOTCEForCausalLM.from_pretrained("<path_to_saved_checkpoint>")
+model = CheemsOTCEForCausalLM.from_pretrained("<path_to_saved_checkpoint>", config=config)
 
 input_ids = tokenizer("I am Cheems!", return_tensors='pt').to(model.device)["input_ids"]
 

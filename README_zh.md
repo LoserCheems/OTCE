@@ -42,11 +42,11 @@ tokenizer = CheemsOTCETokenizer("cheems_tokenizer.model")
 
 # 初始化
 config = CheemsOTCEConfig()
-model = CheemsOTCEForCausalLM(config)
+model = CheemsOTCEForCausalLM(config=config)
 
 # 或者从保存检查点的路径加载
 config = CheemsOTCEConfig.from_pretrained("<保存检查点的路径>")
-model = CheemsOTCEForCausalLM.from_pretrained("<保存检查点的路径>")
+model = CheemsOTCEForCausalLM.from_pretrained("<保存检查点的路径>", config=config)
 
 
 input_ids = tokenizer("I am Cheems!", return_tensors='pt').to(model.device)["input_ids"]
