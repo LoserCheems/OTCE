@@ -1,6 +1,6 @@
 # OTCE
 
-Read this in [English](README.md)
+Read this in [Chinese](README_zh.md)
 
 ![OTCE](./assets/otce.png)
 ![selective_state_space_model_with_positional_encoding](./assets/selective_state_space_model_with_positional_encoding.png)
