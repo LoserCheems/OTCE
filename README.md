@@ -7,9 +7,9 @@ Read this in [Chinese](README_zh.md)
 ![quadratic_self_attention_with_positional_encoding](./assets/quadratic_self_attention_with_positional_encoding.png)
 ![cross_domain_moe](./assets/cross_domain_moe.png)
 
-<!-- > **OTCE: Hybrid SSM and Attention with Cross Domain Mixture of Experts to construct Observer-Thinker-Conceiver-Expresser**\
-> Jingze Shi*\
-> Paper:  -->
+> **OTCE: Hybrid SSM and Attention with Cross Domain Mixture of Experts to construct Observer-Thinker-Conceiver-Expresser**\
+> Jingze Shi et al.*\
+> Paper: 
 
 
 ## About
@@ -38,9 +38,14 @@ from OTCE.tokenization_cheems_OTCE import CheemsOTCETokenizer
 from OTCE.configuration_cheems_OTCE import CheemsOTCEConfig
 from OTCE.modeling_cheems_OTCE import CheemsOTCEForCausalLM
 
+# Initialize
 tokenizer = CheemsOTCETokenizer("cheems_tokenizer.model")
 config = CheemsOTCEConfig()
 model = CheemsOTCEForCausalLM(config)
+
+# Or load from the path of the saved checkpoint
+config = CheemsOTCEConfig.from_pretrained("<path_to_saved_checkpoint>")
+model = CheemsOTCEForCausalLM.from_pretrained("<path_to_saved_checkpoint>")
 
 input_ids = tokenizer("I am Cheems!", return_tensors='pt').to(model.device)["input_ids"]
 
