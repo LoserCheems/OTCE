@@ -23,7 +23,7 @@ class CheemsOTCEConfig(PretrainedConfig):
         hidden_bias=False,
         hidden_dropout=0.0,
         hidden_act="silu",
-        max_position_embeddings=16384, 
+        max_position_embeddings=65536, # 2^16
         rope_theta=10000.0,
 
         # 初始化配置
