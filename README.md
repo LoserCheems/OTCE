@@ -16,7 +16,7 @@ Read this in [Chinese](README_zh.md)
 
 OTCE is a hybrid of SSM and Attention algorithms, with a sparse model architecture with cross-domain shared parameters, which outperforms models driven solely by SSM or Attention in language modeling.
 
-As a poor student, most of the computing power of this project and a small amount of data come from the medical engineering cross-project resources of my school. Checkpoint weights are not allowed to be open-sourced, only the modeling code written by me can be open-sourced.
+As a poor student, most of the computing power and a small amount of data for this project come from the resources of the cross project of medicine and software engineering in our university.  The checkpoint weights are not allowed to be open-sourced, only the modeling code written by me can be open-sourced.
 
 
 ## Requirements
@@ -29,7 +29,7 @@ As a poor student, most of the computing power of this project and a small amoun
 
 ## Usage
 
-Same as using tokenizers, configurations, and model methods in the Transformers library.
+Same as using tokenizers, configurations, and models in the Transformers library.
 
 ## Example
 

@@ -29,7 +29,7 @@ OTCE 是一种融合了 SSM 和 Attention 算法, 具有交叉领域共享参数
 
 ## 使用
 
-与使用 Transformers 库中的分词器, 配置, 模型方法相同.
+与使用 Transformers 库中分词器, 配置, 模型的方法相同.
 
 ## 示例
 
