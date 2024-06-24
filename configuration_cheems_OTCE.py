@@ -39,8 +39,8 @@ class CheemsOTCEConfig(PretrainedConfig):
         eos_token_id=2,
         tie_word_embeddings=False,
 
-        # Mamba 配置
-        # Mamba Configuration
+        # SSM 配置
+        # SSM Configuration
         use_mamba_kernels=True,
         mamba_act="silu",
         mamba_d_state=64,
@@ -52,7 +52,7 @@ class CheemsOTCEConfig(PretrainedConfig):
         mamba_inner_layernorms=True,
         mamba_rope=True,
 
-        # Attention配置
+        # Attention 配置
         # Attention Configuration
         num_attention_heads=16,
         num_key_value_heads=8,
@@ -99,8 +99,8 @@ class CheemsOTCEConfig(PretrainedConfig):
         self.output_router_logits = output_router_logits
         self.router_aux_loss_coef = router_aux_loss_coef
 
-        # Mamba 配置
-        # Mamba Configuration
+        # SSM 配置
+        # SSM Configuration
         self.use_mamba_kernels = use_mamba_kernels
         self.mamba_act = mamba_act
         self.mamba_d_state = mamba_d_state
@@ -112,7 +112,7 @@ class CheemsOTCEConfig(PretrainedConfig):
         self.mamba_inner_layernorms = mamba_inner_layernorms
         self.mamba_rope = mamba_rope
 
-        # Attention配置
+        # Attention 配置
         # Attention Configuration
         self.num_attention_heads = num_attention_heads
         if num_key_value_heads is None:
