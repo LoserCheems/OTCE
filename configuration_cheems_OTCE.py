@@ -71,7 +71,7 @@ class CheemsOTCEConfig(PretrainedConfig):
 
         # 交叉领域MOE配置
         # Cross-domain MOE Configuration
-        expert_type="expansive", # expansive or cohesive or none
+        expert_type="expansive", # expansive or cohesive or None
         num_experts=4,
         num_experts_per_tok=1,
         **kwargs
