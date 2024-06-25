@@ -60,6 +60,8 @@ print(tokenizer.batch_decode(outputs))
 
 ## Citation
 
+If you find this project helpful in your work, please cite OTCE:
+
 ```bibtex
 @article{shi2024otce,
   title={OTCE: Hybrid SSM and Attention with Cross Domain Mixture of Experts to construct Observer-Thinker-Conceiver-Expresser},
