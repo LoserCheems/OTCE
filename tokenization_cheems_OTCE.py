@@ -326,7 +326,3 @@ class CheemsOTCETokenizer(PreTrainedTokenizer):
             encoded_inputs[self.model_input_names[0]] = [self.pad_token_id] * difference + required_input
 
         return encoded_inputs
-
-# tokenizer = CheemsTokenizer(vocab_file="./model/cheems/cheems_transformer/tokenizer.model")
-# tokenizer.get_special_tokens_mask
-# tokenizer.mask_token_id
