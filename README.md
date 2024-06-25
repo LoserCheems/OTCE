@@ -9,7 +9,7 @@ Read this in [Chinese](README_zh.md)
 
 > **OTCE: Hybrid SSM and Attention with Cross Domain Mixture of Experts to construct Observer-Thinker-Conceiver-Expresser**\
 > Jingze Shi et al.*\
-> Paper: 
+> Paper: https://arxiv.org/abs/2406.16495
 
 
 ## About
@@ -56,4 +56,15 @@ print(tokenizer.batch_decode(outputs))
 
 ```shell
 ['[gMASK]sop I am Cheems! Thank you Cheems!']
+```
+
+## Citation
+
+```bibtex
+@article{shi2024otce,
+  title={OTCE: Hybrid SSM and Attention with Cross Domain Mixture of Experts to construct Observer-Thinker-Conceiver-Expresser},
+  author={Shi, Jingze and Xie, Ting and Wu, Bingheng and Zheng, Chunjun and Wang, Kai},
+  journal={arXiv preprint arXiv:2406.16495},
+  year={2024}
+}
 ```
