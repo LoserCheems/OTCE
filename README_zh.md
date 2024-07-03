@@ -25,7 +25,7 @@ OTCE 是一种融合了 SSM 和 Attention 算法, 具有交叉领域共享参数
 - NVIDIA GPU
 - CUDA 11.6+
 - PyTorch 1.12+
-- `pip install transformers causal-conv1d>=1.2.0 mamba-ssm sentencepiece`
+- `pip install transformers==4.41.2 causal-conv1d>=1.2.0 mamba-ssm sentencepiece`
 
 ## 使用
 
